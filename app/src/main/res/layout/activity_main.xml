@@ -5,8 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     tools:ignore="MergeRootFrame">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
 
+        android:background="#ffcbe8eb"
+        android:id="@+id/camera"
+        android:src="@android:drawable/ic_menu_camera" />
 
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Click to capture image"
+    android:textSize="30dp"
+    android:paddingTop="15dp"/>
+</LinearLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"

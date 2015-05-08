@@ -1,6 +1,8 @@
 package com.example.user.myflickr;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
@@ -12,6 +14,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.*;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +35,8 @@ import java.util.ArrayList;
 public class MainActivity extends ActionBarActivity {
     ProgressBar progress;
     ArrayList<FlickrPhoto> mPhotos = new ArrayList<>();
+  //  ImageView showcamera;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,16 @@ public class MainActivity extends ActionBarActivity {
             progress.setVisibility(View.GONE);
             Toast.makeText(this, "Not online", Toast.LENGTH_LONG).show();
         }
+
+        ImageView   showcamera = (ImageView)findViewById(R.id.camera);
+        showcamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, 0);
+            }
+        });
+
     }
 
     public ArrayList<FlickrPhoto> getmPhotos() {
@@ -71,6 +87,7 @@ public class MainActivity extends ActionBarActivity {
         ft.add(R.id.container, new FlickerFragment());
         ft.commit();
     }
+
 
 
     @Override

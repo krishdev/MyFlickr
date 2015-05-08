@@ -7,10 +7,10 @@ public class Constants {
     public static final String SECRET = "03ec30d2884d0c12";
     //    public static final String LATITUDE = "34.0672280";
 //    public static final String LONGITUDE = "-118.1667410";
-    public static final String RADIUS = "1";
-
-    public static final String LATITUDE = "40.7127837";
-    public static final String LONGITUDE = "-74.00594130000002";
+    public static final String RADIUS = "5";
+    public static final String RADIUS_UNITS="km";
+    public static final String LATITUDE = "12.619902";
+    public static final String LONGITUDE = "80.176849";
 
 
 
